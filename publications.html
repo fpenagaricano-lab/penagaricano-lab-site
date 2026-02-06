@@ -77,6 +77,17 @@
 </head>
 <body>
 
+<!-- UW-Madison Institutional Banner (Required by UW-207) -->
+<div class="uw-top-banner">
+  <div class="container">
+    <a href="https://www.wisc.edu/">
+      <img src="images/UwMadison_institutional-logo2.png" alt="" class="uw-banner-crest">
+      <span>University of Wisconsin–Madison</span>
+    </a>
+  </div>
+</div>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
 <nav class="site-nav" id="siteNav">
   <div class="nav-inner">
     <a href="index.html" class="nav-brand">
@@ -95,6 +106,8 @@
     </ul>
   </div>
 </nav>
+
+<main id="main-content">
 
 <div class="page-header">
   <div class="container">
@@ -152,7 +165,7 @@
     </div>
 
     <!-- ============ 2026 ============ -->
-    <h3 class="pub-year-header pub-year-toggle collapsed" onclick="toggleYear(this)" data-year="2026">2026 <span class="pub-count-badge">2</span></h3>
+    <h3 class="pub-year-header pub-year-toggle collapsed" onclick="toggleYear(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleYear(this);}" tabindex="0" role="button" data-year="2026">2026 <span class="pub-count-badge">2</span></h3>
     <div class="pub-year-body collapsed" id="year-2026" style="max-height:0">
       <ul class="pub-list">
         <li class="pub-item">
@@ -169,7 +182,7 @@
     </div>
 
     <!-- ============ 2025 ============ -->
-    <h3 class="pub-year-header pub-year-toggle collapsed" onclick="toggleYear(this)" data-year="2025">2025 <span class="pub-count-badge">27</span></h3>
+    <h3 class="pub-year-header pub-year-toggle collapsed" onclick="toggleYear(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleYear(this);}" tabindex="0" role="button" data-year="2025">2025 <span class="pub-count-badge">27</span></h3>
     <div class="pub-year-body collapsed" id="year-2025" style="max-height:0">
       <ul class="pub-list">
         <li class="pub-item">
@@ -296,7 +309,7 @@
     </div>
 
     <!-- ============ 2024 ============ -->
-    <h3 class="pub-year-header pub-year-toggle collapsed" onclick="toggleYear(this)" data-year="2024">2024 <span class="pub-count-badge">20</span></h3>
+    <h3 class="pub-year-header pub-year-toggle collapsed" onclick="toggleYear(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleYear(this);}" tabindex="0" role="button" data-year="2024">2024 <span class="pub-count-badge">20</span></h3>
     <div class="pub-year-body collapsed" id="year-2024" style="max-height:0">
       <ul class="pub-list">
         <li class="pub-item">
@@ -403,7 +416,7 @@
     </div>
 
     <!-- ============ 2023 ============ -->
-    <h3 class="pub-year-header pub-year-toggle collapsed" onclick="toggleYear(this)" data-year="2023">2023 <span class="pub-count-badge">12</span></h3>
+    <h3 class="pub-year-header pub-year-toggle collapsed" onclick="toggleYear(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleYear(this);}" tabindex="0" role="button" data-year="2023">2023 <span class="pub-count-badge">12</span></h3>
     <div class="pub-year-body collapsed" id="year-2023" style="max-height:0">
       <ul class="pub-list">
         <li class="pub-item">
@@ -480,11 +493,15 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="images/UwMadison_institutional-logo.png" alt="UW-Madison" class="footer-logo">
+        <a href="https://www.wisc.edu/" aria-label="University of Wisconsin–Madison">
+          <img src="images/UwMadison_institutional-logo.png" alt="University of Wisconsin–Madison" class="footer-logo">
+        </a>
         <h3>Peñagaricano Lab</h3>
         <p>
           Quantitative Genomics &amp; Computational Biology<br>
@@ -515,8 +532,11 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Peñagaricano Lab &middot; University of Wisconsin-Madison</span>
-      <a href="https://andysci.wisc.edu/" target="_blank">Department of Animal &amp; Dairy Sciences</a>
+      <div class="footer-legal">
+        <p>Feedback, questions or accessibility issues: <a href="mailto:fpenagarican@wisc.edu">fpenagarican@wisc.edu</a></p>
+        <p><a href="https://www.wisc.edu/privacy-notice/">Privacy Notice</a> | &copy; 2026 The Board of Regents of the <a href="https://www.wisconsin.edu/">University of Wisconsin System</a></p>
+        <p><a href="https://digitalaccessibility.wisc.edu/">Learn more about accessibility at UW–Madison</a></p>
+      </div>
     </div>
   </div>
 </footer>
@@ -550,6 +570,14 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.pub-year-toggle').forEach(function(header) {
     header.classList.add('collapsed');
   });
+});
+</script>
+
+<!-- UW-Madison Cookie Consent (GDPR compliance) -->
+<script src="https://cdn.wisc.cloud/cookie-consent/1.1.2/uwcookieconsent.min.js"></script>
+<script>
+window.addEventListener('load', function() {
+  if (window.cookieconsent) { window.cookieconsent.initialize({ enabled: true, testing: false }); }
 });
 </script>
 </body>
